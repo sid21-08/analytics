@@ -28,7 +28,8 @@ This module contains core agent execution loops, valuation calculators, NLP sign
 The advisory agent follows a strict three-stage execution pattern:
 1. **Think:** Map investor risk tolerance to prescribed equal-weighted asset allocations ($rac{1}{3}$ weight each).
 2. **Act:** Retrieve asset parameters from `STOCK_UNIVERSE` via tool call `get_stock_data(ticker)`.
-3. **Observe:** Compute portfolio CAPM return $E[R_p] = R_f + eta_p (E[R_m] - R_f)$ using $R_f = 4.0\%$, $E[R_m] = 10.0\%$, and portfolio standard deviation assuming pairwise asset correlation $ho = 0.30$.
+3. **Observe:** Compute portfolio CAPM return $E[R_p] = R_f + eta_p (E[R_m] - R_f)$ using $R_f = 4.0\%$, $E[R_m] = 10.0\%$, and portfolio standard deviation assuming pairwise asset correlation $
+ho = 0.30$.
 4. **Escalation Gate:** If portfolio volatility exceeds $20.00\%$, flag status as `ESCALATED_TO_HUMAN_ADVISOR`; otherwise, `FINALIZED`.
 
 ### Recorded Execution Run
